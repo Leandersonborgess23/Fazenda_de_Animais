@@ -1,0 +1,178 @@
+# Claase Mãe
+class Animal:
+    def __init__(self, nome, cor, sexo, velocidade, peso, estamina, posição_x, posição_y):
+        self.nome = nome
+        self.cor = cor
+        self.sexo = sexo
+        self.velocidade = velocidade
+        self.peso = peso
+        self.estamina = estamina
+        self.posição_x = posição_x
+        self.posição_y = posição_y
+
+    def getNome(self):
+        return self.nome
+    
+    def setNome(self, nome):
+        self.nome = nome
+
+    def getCor(self):
+        return self.cor
+    
+    def setCor(self, cor):
+        self.cor = cor
+    
+    def getSexo(self):
+        return self.sexo
+    
+    def setSexo(self, sexo):
+        self.sexo = sexo
+    
+    def getVelocidade(self):
+        return self.velocidade
+    
+    def setVelocidade(self, velocidade):
+        self.velocidade = velocidade
+    
+    def getPeso(self):
+        return self.peso
+    
+    def setPeso(self, peso):
+        self.peso = peso
+    
+    def getEstamina(self):
+        return self.estamina
+    
+    def setEstamina(self, estamina):
+        self.estamina = estamina
+    
+    def getposição_x(self):
+        return self.posição_x
+    
+    def setposição_x(self, posição_x):
+        self.posição_x = posição_x
+    
+    def getposição_y(self):
+        return self.posição_y
+    
+    def setposição_x(self, posição_y):
+        self.posição_y = posição_y
+
+
+#Caracteristicas
+def imprimir_caracteristicas(self):
+        print("Nome: ", self.nome)
+        print("Cor: ", self.cor)
+        print("Sexo: ", self.sexo)
+        print("Velocidade: ", self.velocidade)
+        print("Peso: ", self.peso)
+        print("Estamina: ", self.estamina)
+        print("Posição X: ", self.posicao_x)
+        print("Posição Y: ", self.posicao_y)
+
+
+#Subclasses
+class Leao(Animal):
+    def __init__(self, nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y, idade):
+        super().__init__(nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y)
+        self.idade = idade
+
+    def rugir(self):
+        print("O leão está rugindo!")
+    
+    def andar(self, rodada):
+        super().andar(rodada)
+    
+    def matar(self, animal):
+        if isinstance(animal, Cachorro, Gato, Vaca, Elefante, Coelho):
+            animal.morrer()
+
+
+class Cachorro(Animal):
+    def __init__(self, nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y, raca, idade):
+        super().__init__(nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y)
+        self.raca = raca
+        self.idade = idade
+
+    def latir(self):
+        print("O cachorro está latindo!")
+
+    def andar(self, rodada):
+        super().andar(rodada)
+    
+    def matar(self, animal):
+        if isinstance(animal, Gato):
+            animal.morrer()
+    
+    def morrer(self):
+        self.peso += 1
+
+
+
+class Gato(Animal):
+    def __init__(self, nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y, raca):
+        super().__init__(nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y)
+        self.raca = raca
+
+    def miar(self):
+        print("O gato está miando!")
+
+    def andar(self, rodada):
+        super().andar(rodada)
+    
+    def morrer(self):
+        self.peso += 1
+
+
+class Vaca(Animal):
+    def __init__(self, nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y, raca):
+        super().__init__(nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y)
+        self.raca = raca
+
+    def mugir(self):
+        print("A vaca está mugindo!")
+
+    def andar(self, rodada):
+        super().andar(rodada)
+
+    def morrer(self):
+        self.peso += 1
+
+
+class Elefante(Animal):
+    def __init__(self, nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y, raca):
+        super().__init__(nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y)
+        self.raca = raca
+    
+    def trombar(self):
+        print("Trombada do elefante!")
+        
+    def andar(self, rodada):
+        super().andar(rodada)
+    
+    def morrer(self):
+        self.peso += 1
+
+
+class Coelho(Animal):
+    def __init__(self, nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y, raca):
+        super().__init__(nome, cor, sexo, velocidade, peso, estamina, posicao_x, posicao_y)
+        self.raca = raca
+        
+    def guinchar(self):
+        print("O coelho está guinchando!")
+    
+    def andar(self, rodada):
+        super().andar(rodada)
+    
+    def morrer(self):
+        self.peso += 1
+
+
+#Lista de animais
+leao = Leao("Leão", "amarelo", "macho", 3, 100, 50, 0, 0, 5)
+cachorro = Cachorro("Cachorro", "marrom", "macho", 5, 30, 40, 5, 0, "vira-lata", 3)
+gato = Gato("Gato", "preto", "fêmea", 2, 10, 30, 0, 5, "persa")
+vaca = Vaca("Vaca", "branca e preta", "fêmea", 1, 200, 60, 5, 5, "holandesa")
+elefante = Elefante("Elefante", "cinza", "macho", 1, 800, 60, 5, 5, "elephas maximus")
+coelho = Coelho("Coelho", "branco", "macho", 1, 3, 80, 5, 5, "rex")

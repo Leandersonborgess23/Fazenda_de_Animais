@@ -1,0 +1,12 @@
+# Tabuleiro com matrizes
+linhas = 10
+colunas = 10
+
+tabuleiro = []
+
+for i in range(linhas):
+    linha = [0] * colunas
+    tabuleiro.append(linha)
+
+for linha in tabuleiro:
+    print(linha)
