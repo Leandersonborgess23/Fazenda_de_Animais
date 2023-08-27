@@ -264,7 +264,15 @@ for rodada in range(rodadas):
     vaca.imprimir_caracteristicas()
     elefante.imprimir_caracteristicas()
     coelho.imprimir_caracteristicas()
+    print("-----Mortes-----")
+    leao.morrer()
+    cachorro.morrer()
+    gato.morrer()
+    vaca.morrer()
+    elefante.morrer()
+    coelho.morrer()
     print("-" * 20)
+    
 
 #Resultado final
 print("----- Resultado Final -----")
